@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/wallet_opt_icon"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.ch.wallet.OperateActivity">
+
+    <Button
+        android:id="@+id/operate_activity_create_btn"
+        android:layout_width="160dp"
+        android:layout_height="36dp"
+        android:background="@drawable/whilte_circle_btn_bg"
+        android:gravity="center"
+        android:text="创建钱包"
+        android:textColor="#ffffff"
+        android:textSize="12dp" />
+
+    <Button
+        android:id="@+id/operate_activity_guide_btn"
+        android:layout_width="160dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/whilte_circle_btn_bg"
+        android:gravity="center"
+        android:text="导入钱包"
+        android:textColor="#ffffff"
+        android:textSize="12dp" />
+
+</LinearLayout>
