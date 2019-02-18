@@ -9,17 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".LoadingActivity">
+        <activity android:name=".view.LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".OperateActivity" />
-        <activity android:name=".CreateWalletActivity" />
-        <activity android:name=".GuideWalletActivity"></activity>
+        <activity android:name=".view.MainActivity" />
+        <activity android:name=".view.OperateActivity" />
+        <activity android:name=".view.CreateWalletActivity" />
+        <activity android:name=".view.GuideWalletActivity" />
+        <activity android:name=".view.CreateSuccessActivity"></activity>
     </application>
 
 </manifest>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/wallet_load_icon"
-    tools:context="com.ch.wallet.LoadingActivity">
+    tools:context="com.ch.wallet.view.LoadingActivity">
 
     <TextView
         android:id="@+id/loading_activity_text"

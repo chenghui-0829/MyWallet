@@ -6,7 +6,7 @@
     android:background="@mipmap/wallet_opt_icon"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.ch.wallet.OperateActivity">
+    tools:context="com.ch.wallet.view.OperateActivity">
 
     <Button
         android:id="@+id/operate_activity_create_btn"

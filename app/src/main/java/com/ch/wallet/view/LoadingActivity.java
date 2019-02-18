@@ -1,4 +1,4 @@
-package com.ch.wallet;
+package com.ch.wallet.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +8,9 @@ import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.TextView;
+
+import com.ch.wallet.R;
+import com.ch.wallet.util.ActivityManage;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -28,6 +31,7 @@ public class LoadingActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN); // 全屏
         setContentView(R.layout.activity_loading);
         ButterKnife.bind(this);
+        ActivityManage.getInstance().addActivity(this);
         initView();
     }
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.ch.wallet.view.CreateWalletActivity">
+    tools:context="com.ch.wallet.view.CreateSuccessActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,10 +12,10 @@
         android:background="@drawable/app_title_bg">
 
         <ImageView
-            android:id="@+id/create_wallet_activity_back_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:onClick="backBtn"
             android:padding="10dp"
             android:src="@mipmap/app_back_icon" />
 
@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="创建钱包"
+            android:text="创建成功"
             android:textColor="@color/app_white_color_ffffff"
             android:textSize="16dp" />
     </RelativeLayout>
@@ -32,59 +32,34 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="12dp"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/create_wallet_activity_name_edit"
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@mipmap/complete_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="新钱包创建成功" />
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:hint="钱包名称"
-            android:padding="10dp"
-            android:textSize="14dp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/app_line_color_e6e6e6" />
-
-        <EditText
-            android:id="@+id/create_wallet_activity_pass_edit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:hint="密码"
-            android:inputType="textPassword"
-            android:padding="10dp"
-            android:textSize="14dp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/app_line_color_e6e6e6" />
-
-        <EditText
-            android:id="@+id/create_wallet_activity_cfmm_edit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:hint="重复密码"
-            android:inputType="textPassword"
-            android:padding="10dp"
-            android:textSize="14dp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/app_line_color_e6e6e6" />
+            android:layout_marginTop="10dp"
+            android:text="建议您在使用钱包前做好备份，导出助记词或者keystore存储到安全的地方，然后开始尝试转入小额资产启用。"
+            android:textSize="12dp" />
 
         <Button
-            android:id="@+id/create_wallet_activity_create_btn"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/app_title_bg"
-            android:text="创建"
+            android:onClick="BfWallet"
+            android:text="备份钱包"
             android:textColor="@color/app_white_color_ffffff"
             android:textSize="14dp" />
     </LinearLayout>

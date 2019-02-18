@@ -1,10 +1,13 @@
-package com.ch.wallet;
+package com.ch.wallet.view;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import com.ch.wallet.R;
+import com.ch.wallet.util.ActivityManage;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -18,6 +21,7 @@ public class OperateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operate);
         ButterKnife.bind(this);
+        ActivityManage.getInstance().addActivity(this);
     }
 
     @OnClick({R.id.operate_activity_create_btn, R.id.operate_activity_guide_btn})
