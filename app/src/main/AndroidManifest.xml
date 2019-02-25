@@ -20,7 +20,8 @@
         <activity android:name=".view.OperateActivity" />
         <activity android:name=".view.CreateWalletActivity" />
         <activity android:name=".view.GuideWalletActivity" />
-        <activity android:name=".view.CreateSuccessActivity"></activity>
+        <activity android:name=".view.CreateSuccessActivity" />
+        <activity android:name=".view.BackupsActivity"></activity>
     </application>
 
 </manifest>
