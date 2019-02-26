@@ -1,9 +1,11 @@
 package com.ch.wallet.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +15,7 @@ import com.ch.wallet.util.SPUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +38,19 @@ public class MainActivity extends AppCompatActivity {
     private void InitView() {
         nameText.setText((String) SPUtil.get(context, "user", ""));
         addressText.setText((String) SPUtil.get(context, "address", ""));
+    }
+
+
+    @OnClick({R.id.main_activity_glcb_image, R.id.main_activity_ckhq_image})
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.main_activity_glcb_image:
+                startActivity(new Intent(context, BackupActivity.class));
+                break;
+            case R.id.main_activity_ckhq_image:
+
+                break;
+        }
     }
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {

@@ -21,7 +21,8 @@
         <activity android:name=".view.CreateWalletActivity" />
         <activity android:name=".view.GuideWalletActivity" />
         <activity android:name=".view.CreateSuccessActivity" />
-        <activity android:name=".view.BackupsActivity"></activity>
+        <activity android:name=".view.BackupsActivity" />
+        <activity android:name=".view.BackupActivity"></activity>
     </application>
 
 </manifest>

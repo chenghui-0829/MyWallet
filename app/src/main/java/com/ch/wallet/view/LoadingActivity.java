@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.ch.wallet.R;
 import com.ch.wallet.util.ActivityManage;
+import com.ch.wallet.util.SPUtil;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -23,6 +24,8 @@ public class LoadingActivity extends AppCompatActivity {
     private Context context = LoadingActivity.this;
     @BindView(R.id.loading_activity_text)
     TextView textView;
+    private String address;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +39,17 @@ public class LoadingActivity extends AppCompatActivity {
     }
 
     private void initView() {
-
+        address = (String) SPUtil.get(context, "address", "");
         final Intent intent = new Intent();
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                intent.setClass(context, OperateActivity.class);
-                intent.putExtra("tab", "");
+                if ("".equals(address)) {
+                    intent.setClass(context, OperateActivity.class);
+                } else {
+                    intent.setClass(context, MainActivity.class);
+                }
                 startActivity(intent);
                 finish();
             }

@@ -137,5 +137,22 @@ public class WalletManager {
         return null;
     }
 
+    //首先从文件当中读取钱包，如果没有钱包文件，则再创建
+    public WalletFile loadWallet(Context context) {
+        WalletFile walletFile = null;
+        File dir = context.getDir("eth_wallet", Context.MODE_PRIVATE);
+        //存在钱包文件
+        if (dir.exists() && dir.listFiles().length > 0) {
+            File file = dir.listFiles()[0];
+            try {
+                walletFile = objectMapper.readValue(file, WalletFile.class);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            return null;
+        }
+        return walletFile;
+    }
 
 }
