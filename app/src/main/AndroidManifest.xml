@@ -22,7 +22,9 @@
         <activity android:name=".view.GuideWalletActivity" />
         <activity android:name=".view.CreateSuccessActivity" />
         <activity android:name=".view.BackupsActivity" />
-        <activity android:name=".view.BackupActivity"></activity>
+        <activity android:name=".view.BackupActivity" />
+        <activity android:name=".view.PrivateKeyActivity" />
+        <activity android:name=".view.KeyStoreActivity"></activity>
     </application>
 
 </manifest>

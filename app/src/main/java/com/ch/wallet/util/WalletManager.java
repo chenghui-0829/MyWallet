@@ -113,7 +113,7 @@ public class WalletManager {
      * 通过助记词创建钱包
      * @return
      */
-    public WalletFile createWalletByMnemonic(String password) {
+    public WalletFile createWalletByMnemonic(Context context, String password) {
         try {
             //1. 通过助记词创建seed
             byte[] seed = MnemonicCode.toSeed(createMnemonics(), "");
@@ -125,12 +125,18 @@ public class WalletManager {
             //m/44'/60'/0'/0/0
             //parent path: m/44'/60'/0'/0/
             //child number 0
-            DeterministicKey deterministicKey = hierarchy.deriveChild(BIP44_ETH_ACCOUNT_ZERO_PATH, false, true, new ChildNumber(0));
+            DeterministicKey deterministicKey = hierarchy.deriveChild(BIP44_ETH_ACCOUNT_ZERO_PATH, false,
+                    true, new ChildNumber(0));
             //派生出来的第一个地址对应的私钥
             byte[] privKeyBytes = deterministicKey.getPrivKeyBytes();
             ECKeyPair ecKeyPair = ECKeyPair.create(privKeyBytes);
             //创建keysotore = 使用用户输入的密码加密子私钥
-            return Wallet.createLight(password, ecKeyPair);
+            WalletFile walletFile = Wallet.createLight(password, ecKeyPair);
+            File dir = context.getDir("eth_wallet", Context.MODE_PRIVATE);
+            //创建了WalletFile对应的文件
+            File file = new File(dir, getWalletFileName(walletFile));
+            objectMapper.writeValue(file, walletFile);
+            return walletFile;
         } catch (Exception e) {
             e.printStackTrace();
         }

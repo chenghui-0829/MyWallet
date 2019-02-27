@@ -78,7 +78,8 @@ public class CreateWalletActivity extends AppCompatActivity {
 
         @Override
         protected WalletFile doInBackground(String... strings) {
-            return WalletManager.getInstance().createWalletByMnemonic(strings.toString());
+            System.out.println("--------->" + strings[0]);
+            return WalletManager.getInstance().createWalletByMnemonic(context, strings[0]);
         }
 
         @Override
